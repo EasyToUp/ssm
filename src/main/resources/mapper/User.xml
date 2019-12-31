@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xunce.dao.UserDao">
+<!--配置查询所有-->
+    <select id="findAll" resultType="com.xunce.com.xunce.model.User" parameterType="com.xunce.com.xunce.model.User">
+        select * from user where username = #{user.username}+'%' or username = #{user.username}+'%'
+--         select * from user where username = "张%" or username = "王%"
+    </select>
+</mapper>

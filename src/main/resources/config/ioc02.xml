@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/util
+         https://www.springframework.org/schema/util/spring-util.xsd">
+    <context:properties location="config/dbConfig.properties" id="properties"></context:properties>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="${username01}"></property>
+        <property name="password" value="${password}"></property>
+        <property name="jdbcUrl" value="${jdbcUrl}"></property>
+        <property name="driverClass" value="${driverClass}"></property>
+    </bean>
+    <!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+    <!--        <property name="user" value="root"></property>-->
+    <!--        <property name="password" value="root"></property>-->
+    <!--        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db1"></property>-->
+    <!--        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>-->
+    <!--    </bean>-->
+
+</beans>
